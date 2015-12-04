@@ -1,7 +1,7 @@
 ---
 layout: workshop
 root: .
-venue: "QUT - Research Bazaar (R)"     # brief name of host site without address (e.g., "Euphoric State University")
+venue: "QUT - Research Bazaar (Python)"     # brief name of host site without address (e.g., "Euphoric State University")
 address: "Queensland University of Technology, Gardens Point Campus"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: "au"    # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"   # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
@@ -9,7 +9,7 @@ latlng: "-27.476664, 153.027965"    # fractional latitude and longitude (e.g., "
 humandate: "February 1-2, 2016"  # human-readable date (e.g., "Feb 17-18, 2020")
 humantime: "9:00 am - 5:00 pm"  # human-readable time (e.g., "9:00 am - 4:30 pm")
 startdate: "2016-02-01"  # use YYYY-MM-DD format like "2015-01-01"
-enddate: "2016-02-02"    # use YYYY-MM-DD format like" 2015-01-02"
+enddate: "2016-02-02"    # use YYYY-MM-DD format like "2015-01-02"
 instructor: ["Amanda Miotto", "Belinda Weaver", "Sam Hames", "+ more TBC"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["TBC"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 contact: "s.hames@uq.edu.au"   # contact email address for workshop organizer, such as "grace@hopper.org"
@@ -63,8 +63,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   We are running two Software Carpentry workshops in parallel as part of the
   "<a href="https://feb2016.resbaz.com/brisbane/">Research Bazaar</a>" in Brisbane.
   This workshop will cover task automation with the Unix shell Bash, programming
-  with R and version control with Git. (The other workshop is the same, except it
-  will cover Python instead of R.)
+  with Python and version control with Git.
+  (<a href="http://bio-swc-bne.github.io/2016-02-01-BrisbaneResBaz-R/">The other workshop</a>
+  is the same, except it will cover R instead of Python.)
 </p>
 <p align="center">
   <em>
@@ -159,9 +160,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <tr> <td>10:30</td>  <td>Morning tea</td> </tr>
       <tr> <td>11:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
       <tr> <td>12:30</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:30</td>  <td>Introduction to R</td> </tr>
+      <tr> <td>13:30</td>  <td>Introduction to Python with the Jupyter notebook</td> </tr>
       <tr> <td>15:00</td>  <td>Afternoon tea</td> </tr>
-      <tr> <td>15:30</td>  <td>Rstudio, R help</td> </tr>
+      <tr> <td>15:30</td>  <td>Analysing data with Python</td> </tr>
       <tr> <td>16:45</td>  <td>Wrap-up</td> </tr>
     </table>
   </div>
@@ -169,9 +170,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
     <h3>Day 2</h3>
     <table class="table table-striped">
       <tr> <td>08:30</td>  <td>Setting up and software installation help</td> </tr>
-      <tr> <td>09:00</td>  <td>Graphing and using packages in R</td> </tr>
+      <tr> <td>09:00</td>  <td>Python conditionals and functions</td> </tr>
       <tr> <td>10:30</td>  <td>Morning tea</td> </tr>
-      <tr> <td>11:00</td>  <td>Making your own R scripts</td> </tr>
+      <tr> <td>11:00</td>  <td>When things go wrong: errors, exceptions and debugging in Python</td> </tr>
       <tr> <td>12:30</td>  <td>Lunch break</td> </tr>
       <tr> <td>13:30</td>  <td>Version control with Git - Intro</td> </tr>
       <tr> <td>15:00</td>  <td>Afternoon tea</td> </tr>
@@ -239,14 +240,14 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </div>
 
   <div class="col-md-6">
-    <h3>Programming in R</h3>
+    <h3>Programming in Python</h3>
     <ul>
-      <li>Working with vectors and data frames</li>
+      <li>Working with Python in the Jupyter notebook</li>
       <li>Reading and plotting data</li>
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
-      <li>Using R from the command line</li>
-      <li><a href="http://swcarpentry.github.io/r-novice-gapminder/reference.html"  target="_blank">Reference...</a></li>
+      <li>Debugging and testing your programs</li>
+      <li><a href="{{site.swc_githubio}}/python-novice-inflammation/reference.html"  target="_blank">Reference...</a></li>
     </ul>
   </div>
 
@@ -490,50 +491,90 @@ workshop.
 </div> <!-- End of 'editor' section. -->
 
 
-<div id="r"> <!-- Start of 'R' section. -->
-  <h3>R</h3>
+<div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
+           the workshop will teach Python using something other than
+           the IPython notebook.
+           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
+  <h3>Python</h3>
 
   <p>
-    <a href="http://www.r-project.org" target="_blank">R</a> is a programming language
-    that is especially powerful for data exploration, visualization, and
-    statistical analysis. To interact with R, we use
-    <a href="http://www.rstudio.com/" target="_blank">RStudio</a>.
+    <a href="http://python.org">Python</a> is a popular language for
+    scientific computing, and great for general-purpose programming as
+    well.  Installing all of its scientific packages individually can be
+    a bit difficult, so we recommend
+    <a href="https://www.continuum.io/anaconda">Anaconda</a>,
+    an all-in-one installer.
   </p>
+
+    <p>
+      Regardless of how you choose to install it,
+      <strong>please make sure you install Python version 3.x</strong>
+      (e.g., 3.5 is fine).
+    </p>
+
+    <p>
+      We will teach Python using the IPython notebook, a programming environment
+      that runs in a web browser. For this to work you will need a reasonably
+      up-to-date browser. The current versions of the Chrome, Safari and
+      Firefox browsers are all <a
+      href='http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility'>supported</a>
+      (some older browsers, including Internet Explorer version 9
+      and below, are not).
+    </p>
 
   <div class="row">
     <div class="col-md-4">
-      <h4 id="r-windows">Windows</h4>
-      <p>
-        Install R by downloading and running
-        <a href="http://cran.r-project.org/bin/windows/base/release.htm" target="_blank">this .exe file</a>
-        from <a href="http://cran.r-project.org/index.html" target="_blank">CRAN</a>.
-        Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop" target="_blank">RStudio IDE</a>.
-      </p>
+      <h4 id="python-windows">Windows</h4>
+      <ol>
+        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Download the Python 3 installer for Windows.</li>
+        <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
+      </ol>
     </div>
     <div class="col-md-4">
-      <h4 id="r-macosx">Mac OS X</h4>
-      <p>
-        Install R by downloading and running
-        <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
-        from <a href="http://cran.r-project.org/index.html" target="_blank">CRAN</a>.
-        Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop" target="_blank">RStudio IDE</a>.
-      </p>
+      <h4 id="python-macosx">Mac OS X</h4>
+      <ol>
+        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Download the Python 3 installer for OS X.</li>
+        <li>Install Python 3 using all of the defaults for installation.</li>
+      </ol>
     </div>
     <div class="col-md-4">
-      <h4 id="r-linux">Linux</h4>
-      <p>
-        You can download the binary files for your distribution
-        from <a href="http://cran.r-project.org/index.html" target="_blank">CRAN</a>. Or
-        you can use your package manager (e.g. for Debian/Ubuntu
-        run <code>sudo apt-get install r-base</code> and for Fedora run
-        <code>sudo yum install R</code>).  Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop" target="_blank">RStudio IDE</a>.
+      <h4 id="python-linux">Linux</h4>
       </p>
+      <ol>
+        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
+        <li>Download the Python 3 installer for Linux.</li>
+        <li>Install Python 3 using all of the defaults for installation.
+        (Installation requires using the shell. If you aren't
+        comfortable doing the installation yourself
+        stop here and request help at the workshop.)</li>
+        <li>
+          Open a terminal window.
+        </li>
+        <li>
+          Type <pre>bash Anaconda-</pre> and then press
+          tab. The name of the file you just downloaded should
+          appear.
+        </li>
+        <li>
+          Press enter. You will follow the text-only prompts.  When
+          there is a colon at the bottom of the screen press the down
+          arrow to move down through the text. Type <code>yes</code> and
+          press enter to approve the license. Press enter to approve the
+          default location for the files. Type <code>yes</code> and
+          press enter to prepend Anaconda to your <code>PATH</code>
+          (this makes the Anaconda distribution the default Python).
+        </li>
+      </ol>
     </div>
   </div>
-</div> <!-- End of 'R' section. -->
+  <p>
+  Once you are done installing the software listed above,
+  please go to <a href="setup/index.html">this page</a>,
+  which has instructions on how to test that everything was installed correctly.
+  </p>
+</div> <!-- End of 'Python' section. -->
 
 
 <!--
